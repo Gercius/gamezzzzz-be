@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace gamezzzzz_be.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/games")]
 public class GamesController: ControllerBase
 {
     private readonly GamesService _gamesService;
@@ -18,7 +18,7 @@ public class GamesController: ControllerBase
     //    await _gamesService.GetAsync();
 
     [HttpGet]
-    public async Task<IActionResult> GetGames(int page = 1, int pageSize = 25)
+    public async Task<IActionResult> GetGames(int page = 1, int pageSize = 30)
     {
         List<Game> games = await _gamesService.GetGames(page, pageSize);
 
